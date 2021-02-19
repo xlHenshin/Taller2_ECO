@@ -2,7 +2,7 @@ package com.example.trabajo2;
 
 public class Pregunta {
 
-    private int a, b;
+    private int a, b, c;
     private String operador;
     private String [] operandos = {"+","-", "*", "/"};
 
@@ -16,7 +16,14 @@ public class Pregunta {
 
 
     public String getPregunta(){
-        return a+" "+operador+" "+b;
+        if (operador.equals("/")){
+            c=a*b;
+            return c+" "+operador+" "+a;
+        }else{
+            return a+" "+operador+" "+b;
+        }
+
+
     }
 
     public int getRespuesta(){
@@ -38,7 +45,7 @@ public class Pregunta {
                 break;
 
             case "/":
-            respuesta=a/b;
+            respuesta=c/a;
                 break;
         }
 
